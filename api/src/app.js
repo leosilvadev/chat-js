@@ -3,9 +3,8 @@
  */
 
 const Hapi = require('hapi'),
-  redis = require("redis"),
-  client = redis.createClient(),
-  persistor = require('./channels/services/persistor')(client),
+  client = require("redis").createClient(),
+  messagePersistor = require('./messages/services/persistor')(client),
   MessageRouter = require('./channels/router');
 
 client.on("error", (err) => console.error(err));
@@ -18,7 +17,7 @@ io.on('connection', socket => {
   socket.on('send-chat-message', data => {
     const message = JSON.parse(data);
     message.date = new Date();
-    persistor.persist(message, (err, response) => io.emit(message.channel.id, JSON.stringify(message)));
+    messagePersistor.persist(message, (err, response) => io.emit(message.channel.id, JSON.stringify(message)));
   });
 });
 

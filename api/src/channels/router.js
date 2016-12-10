@@ -3,11 +3,10 @@
  */
 
 const registrationHandler = require('./endpoints/v1/registration/handler');
-const registrationContract = require('./endpoints/v1/registration/contract');
 
 function Router(server, client) {
   return {
-    route: () =>{
+    route: () => {
       routeRegistration(server, client);
     }
   }

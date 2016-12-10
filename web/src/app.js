@@ -5,24 +5,24 @@ import jquery from 'jquery';
 
 require('./app.sass');
 
-((window, $) => {
+((global, $) => {
   const router = new Navigo(null, false);
   router
     .on('/:channelName', (params) => {
       const channelName = params.channelName;
-      const room = new Room(window, channelName);
+      const room = new Room(global, channelName);
 
-      if (channelName && channelName !== window.location.host) {
+      if (channelName && channelName !== global.location.host) {
         room.join(env.apiUrl);
         const messageTxt = $('#txtMessage');
-        window.sendMessage = () => {
+        global.sendMessage = () => {
           room.sendMessage(messageTxt.val());
           messageTxt.val('');
           return false;
         };
 
       } else {
-        window.location.href = '/default';
+        global.location.href = '/default';
       }
     })
     .resolve();
