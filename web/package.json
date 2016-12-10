@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --bail --progress --profile",
-    "dev": "webpack-dev-server --history-api-fallback --inline --progress",
+    "dev": "nohup webpack-dev-server --history-api-fallback --inline --progress &",
     "test": "karma start"
   },
   "repository": {

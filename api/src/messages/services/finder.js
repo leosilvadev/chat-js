@@ -4,10 +4,12 @@
 
 const byDateAsc = (last, next) => last.date < next.date ? -1 : 1;
 
+const keyFor = (channelName) => `chat:channels:${channelName}:messages`;
+
 const MessageFinder = (client) => {
   return {
     findAll: (channelName, onSuccess, onError) => {
-      const key = `chat:channels:${channelName}:messages`;
+      const key = keyFor(channelName);
       client.smembers(key, (err, messages) => {
         if (err) {
           onError(err);
@@ -23,7 +25,7 @@ const MessageFinder = (client) => {
     },
 
     exists: (channelName, onExists, onNotFound, onError) => {
-      const key = `chat:channels:${channelName}:messages`;
+      const key = keyFor(channelName);
       client.scard(key, (err, total) => {
         if (err) {
           onError(err);
