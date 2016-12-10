@@ -1,0 +1,63 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+  body
+    font: 13px Lato, Helvetica, Arial
+
+  .chat__header
+    font-family: Gotham
+    font-size: 16px
+    font-weight: bold
+    color: white
+    background: #456be2
+    padding: 10px
+    position: fixed
+    top: 0
+    width: 100%
+    height: 40px
+    display: flex
+
+    #username
+      flex-grow: 8
+
+    #channelName
+      flex-grow: 3
+
+    #status
+      flex-grow: 1
+
+  form
+    background: #456be2
+    padding: 10px
+    position: fixed
+    bottom: 0
+    width: 100%
+
+    input
+      border: 0
+      padding: 10px
+      width: 90%
+      margin-right: .5%
+
+    button
+      width: 9%
+      background: rgb(255, 255, 255)
+      border: none
+      padding: 10px
+
+  #messages
+    margin-top: 40px
+    margin-bottom: 60px
+    list-style-type: none
+    padding: 0
+
+    li
+      padding: 5px 10px
+
+    li:nth-child(odd)
+      background: #eee
+
+    li > .name, li > .time
+      font-weight: bold

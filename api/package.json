@@ -1,0 +1,23 @@
+{
+  "name": "chat-js-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "leosilvadev",
+  "license": "ISC",
+  "dependencies": {
+    "chance": "^1.0.4",
+    "hapi": "^16.0.1",
+    "joi": "^10.0.5",
+    "redis": "^2.6.3",
+    "socket.io": "^1.7.1",
+    "uuid": "^3.0.1"
+  },
+  "devDependencies": {
+    "babel-preset-es2015-node4": "^2.1.0"
+  }
+}
