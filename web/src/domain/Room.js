@@ -27,7 +27,7 @@ class Room {
   };
 
   _createChannel(apiUrl, callback) {
-    $.getJSON(`${apiUrl}/${this.name}`, {}, callback);
+    $.post(`${apiUrl}/${this.name}`, callback);
   };
 
   sendMessage(text) {

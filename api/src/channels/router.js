@@ -12,11 +12,11 @@ const Router = (server, client) => {
   return {
     route
   }
-}
+};
 
 const routeRegistration = (server, client) => {
   server.route({
-    method: 'GET',
+    method: 'POST',
     path: '/v1/channels/{channel}',
     handler: registrationHandler(client),
     config: {
