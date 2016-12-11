@@ -5,5 +5,5 @@ npm install &> /dev/null
 echo "Dependencies installed!"
 
 echo "Starting chat-web..."
-npm run dev
+npm run dev-background
 

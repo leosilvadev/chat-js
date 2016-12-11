@@ -4,24 +4,16 @@
 
 const Hapi = require('hapi'),
   client = require("redis").createClient(),
-  messagePersistor = require('./messages/services/persistor')(client),
-  MessageRouter = require('./channels/router');
+  MessageRouter = require('./channels/router'),
+  MessageListener = require('./messages/listeners/listener');
 
 client.on("error", (err) => console.error(err));
 
 const server = new Hapi.Server();
 server.connection({port: 3000});
 
-const io = require('socket.io')(server.listener);
-io.on('connection', socket => {
-  socket.on('send-chat-message', data => {
-    const message = JSON.parse(data);
-    message.date = new Date();
-    messagePersistor.persist(message, (err, response) => io.emit(message.channel.id, JSON.stringify(message)));
-  });
-});
-
-new MessageRouter(server, client).route();
+MessageRouter(server, client).route();
+MessageListener(server.listener).listen(client);
 
 server.start((err) => {
   if (err) {

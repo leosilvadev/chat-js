@@ -13,7 +13,7 @@ if [ ! -d "redis" ]; then
   echo "Redis installed!"
 fi
 
-cd redis/src
+cd src
 nohup redis-server &> /dev/null &
 
 cd ../../api

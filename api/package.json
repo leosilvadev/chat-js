@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nohup node src/app.js &",
+    "dev": "node src/app.js",
+    "dev-background": "nohup node src/app.js &",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "leosilvadev",

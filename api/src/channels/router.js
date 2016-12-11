@@ -4,11 +4,13 @@
 
 const registrationHandler = require('./endpoints/v1/registration/handler');
 
-function Router(server, client) {
+const Router = (server, client) => {
+  const route = () => {
+    routeRegistration(server, client);
+  };
+
   return {
-    route: () => {
-      routeRegistration(server, client);
-    }
+    route
   }
 }
 
