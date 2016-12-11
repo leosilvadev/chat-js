@@ -1,5 +1,6 @@
 dist/
 node_modules/
+redis/
 npm-debug.log
 nohup.out
 .idea/
