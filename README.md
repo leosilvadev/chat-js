@@ -12,6 +12,12 @@ git clone https://github.com/leosilvadev/chat-js.git
 ./run.sh
 ```
 
+
+#### Run tests
+```bash
+./runTest.sh
+```
+
 ###### What will happen?
 - Download and install redis
 - Install api dependencies
