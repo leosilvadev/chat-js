@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node src/app.js",
     "dev-background": "nohup node src/app.js &",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine-node spec",
+    "test-watch": "jasmine-node spec --autotest --watch ./"
   },
   "author": "leosilvadev",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "uuid": "^3.0.1"
   },
   "devDependencies": {
-    "babel-preset-es2015-node4": "^2.1.0"
+    "babel-preset-es2015-node4": "^2.1.0",
+    "jasmine-node": "^1.14.5"
   }
 }

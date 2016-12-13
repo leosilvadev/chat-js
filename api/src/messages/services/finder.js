@@ -13,7 +13,7 @@ const MessageFinder = (client) => {
       if (err) {
         onError(err);
 
-      } else if (messages) {
+      } else if (messages && messages.length > 0) {
         onSuccess(messages.map(JSON.parse).sort(byDateAsc));
 
       } else {
