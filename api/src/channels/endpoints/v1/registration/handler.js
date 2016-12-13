@@ -31,7 +31,7 @@ const handler = (client) => {
       };
       const message = {username, channel, text: 'Created the channel', date: new Date()};
       const response = {channel, username, messages: [message]};
-      messagePersistor.persist(message, (err, res) => reply(response).code(201));
+      messagePersistor.persist(message, () => reply(response).code(201), (err) => console.log(err));
     }
   };
 

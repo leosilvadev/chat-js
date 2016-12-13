@@ -112,5 +112,4 @@ describe('Finder behaviors', () => {
       expect(onError).toHaveBeenCalledWith(error);
     });
   });
-
 });

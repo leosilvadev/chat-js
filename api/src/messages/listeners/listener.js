@@ -15,7 +15,7 @@ const MessageListener = (listener) => {
       socket.on(wsChannel, data => {
         const message = JSON.parse(data);
         message.date = new Date();
-        messagePersistor.persist(message, (err, response) => io.emit(message.channel.id, JSON.stringify(message)));
+        messagePersistor.persist(message, () => io.emit(message.channel.id, JSON.stringify(message)), (err) => console.log(err));
       });
     });
   };
