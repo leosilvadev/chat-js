@@ -30,6 +30,7 @@ git clone https://github.com/leosilvadev/chat-js.git
 - Hapijs: minimalist library for a small api
 - Socket.io: good documentation and community support, well know library for ws
 - Jquery: only for http-client, in fact I was using plain javascript for DOM manipulation but I found too many time looking for one simple yet cool http-client for JS
+- Redis: fast and *set* structure is great for chatting messages
 
 #### Why not X?
 - Expressjs: Could be, but I would like to try something new :)
